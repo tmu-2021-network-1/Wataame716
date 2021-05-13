@@ -14,8 +14,17 @@ const renderJson = (json) => {
         const studioTitleEn = document.createElement("span");
         studioTitleEn.className = 'studio-title-en';
         studioTitleEn.textContent = studio['name-en'];
+        const studioTitleDescription = document.createElement("p");
+        studioTitleDescription.className = 'studio-description';
+        studioTitleDescription.textContent = studio['description-ja'];
+        const studioTitlePhoto = document.createElement("img");
+        studioTitlePhoto.width = 1000;
+        studioTitlePhoto.className = 'studio-photo';
+        studioTitlePhoto.src = studio['photo1'];
         studioDiv.appendChild(studioTitle);
         studioDiv.appendChild(studioTitleEn);
+        studioDiv.appendChild(studioTitleDescription);
+        studioDiv.appendChild(studioTitlePhoto);
         document.getElementById('studios').appendChild(studioDiv);
     });
     document.getElementById('result').textContent = JSON.stringify(json, null, 2);
